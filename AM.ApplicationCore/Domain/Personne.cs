@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AM.ApplicationCore
+namespace AM.ApplicationCore.Domain
 {
     public class Personne
     {
@@ -32,10 +32,10 @@ namespace AM.ApplicationCore
         {
         }
 
-        public bool Login(string password, string confirmpassword, string? email=null)
+        public bool Login(string password, string confirmpassword, string? email = null)
         {
-            if(email!=null) { return this.Password == password && this.ConfirmPassword == confirmpassword && this.Email == email; }
-            else { return this.Password == password && this.ConfirmPassword == confirmpassword; }
+            if (email != null) { return Password == password && ConfirmPassword == confirmpassword && Email == email; }
+            else { return Password == password && ConfirmPassword == confirmpassword; }
         }
 
         public virtual void GetMyType()

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AM.ApplicationCore
+namespace AM.ApplicationCore.Domain
 {
-    public class Etudiant:Personne
+    public class Etudiant : Personne
     {
         public string Class { get; set; }
         public string Speciality { get; set; }

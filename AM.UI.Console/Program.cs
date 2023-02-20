@@ -71,6 +71,9 @@ Console.WriteLine("Average duration of flight To Paris; " + sf.DurationAverageDe
 
 
 
+Console.WriteLine("passenger extention");
+TestData.traveller1.UpperFullName();
+Console.WriteLine(TestData.traveller1);
 
 
 
@@ -86,6 +89,6 @@ Console.WriteLine("Average duration of flight To Paris; " + sf.DurationAverageDe
 
 
 
-//Console.WriteLine("************************************ Testing Extension methods  ****************************** ");
-//p1.UpperFullName();
-//Console.WriteLine("First Name: " + p1.FirstName + " Last Name: " + p1.LastName);
+Console.WriteLine("************************************ Testing Extension methods  ****************************** ");
+p1.UpperFullName();
+Console.WriteLine("First Name: " + p1.FirstName + " Last Name: " + p1.LastName);

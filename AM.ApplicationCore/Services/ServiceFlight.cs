@@ -116,13 +116,11 @@ namespace AM.ApplicationCore.Services
         public IEnumerable<Traveller> SeniorTravellers(Flight f)
         {
 
-            var oldTravellers = from p in f.Passengers.OfType<Traveller>()
-                                orderby p.BirthDate
-                                select p;
+            var query = f.Passengers.OfType<Traveller>()
+                                .OrderBy(p => p.BirthDate).Take(3);
+           
 
-
-
-            return oldTravellers.Take(3);
+            return query;
 
         }
 
@@ -131,6 +129,8 @@ namespace AM.ApplicationCore.Services
             var req = from f in Flights
                       group f by f.Destination;
 
+            //Syntaxe de methode:
+            //var query = Flights.GroupBy(f => f.Destination);
 
             foreach (var g in req)
             {

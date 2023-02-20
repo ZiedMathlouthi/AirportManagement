@@ -8,6 +8,7 @@ namespace AM.ApplicationCore.Domain
 {
     public class Passenger
     {
+        public int PassengerId { get; set; }
         public string PassportNumber { get; set; }
         public string FirstName { get; set; }
 
@@ -17,7 +18,7 @@ namespace AM.ApplicationCore.Domain
         public int? TelNumber { get; set; }
         public string? EmailAddress { get; set; }
 
-        public virtual List<Flight> Flights { get; set; }
+        public  List<Flight> Flights { get; set; }
 
         public override string ToString()
         {

@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "dLfJQPNT3PJCG4dKod5Bw10fTxUOxHzd8vDG4FWB8CnalogNduFHL8oTbEkQXTA8vN31WxYQixuv2eNGLcQWvA==",
+  "dgSpecHash": "y2fA0QdSoZuVfVuESrsVnWNWkun8ebZF6+QjcVj18tlBGCN/pfkqqy+Z9s3pPplfjXgY81lY2oBcpx8pkjfmfA==",
   "success": true,
   "projectFilePath": "C:\\Users\\ziedm\\Desktop\\Airport_Management_Main\\AM.ApplicationCore\\AM.ApplicationCore.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\ziedm\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.3\\microsoft.entityframeworkcore.abstractions.7.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -64,3 +64,4 @@ namespace AM.ApplicationCore.Domain
         }
     }
 }
+// favoré :  fluentAPI >> data Annotations >> Configuration par defaut 

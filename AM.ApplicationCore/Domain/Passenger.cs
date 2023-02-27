@@ -3,19 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace AM.ApplicationCore.Domain
 {
     public class Passenger
     {
         public int PassengerId { get; set; }
+        [Key, StringLength(7)]
         public string PassportNumber { get; set; }
+        [MinLength(3 , ErrorMessage ="doit etre > 3") ,MaxLength(25 , ErrorMessage = "doit etre < 25 ")]
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
 
+        [Display(Name ="Date of Birth"), DataType(DataType.Date)]
         public DateTime BirthDate { get; set; }
+      //  [RegularExpression("[0-9]{,8}")]   virgule avant 8 yaani tanjem tekhou 0 walla 1 .... w kif yabda virgule baaed l 8,
+      // yaani tnajem tekhou au minimum 8 
+        [RegularExpression("[0-9]{8}")]
         public int? TelNumber { get; set; }
+        [EmailAddress]
         public string? EmailAddress { get; set; }
 
         public  List<Flight> Flights { get; set; }

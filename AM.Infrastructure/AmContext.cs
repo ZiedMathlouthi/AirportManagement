@@ -1,4 +1,5 @@
 ﻿using AM.ApplicationCore.Domain;
+using AM.Infrastructure.Configurations;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -27,13 +28,10 @@ namespace AM.Infrastructure
         // Config clé primaire   sinn bel Annotations 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Flight>().HasKey(f => f.FlightId);
-            // changement de nom de table au niveau de DB
-            modelBuilder.Entity<Flight>().ToTable("Vols");
-            modelBuilder.Entity<Passenger>().Property(p => p.FirstName).IsRequired()
-                .HasMaxLength(80)
-                .HasDefaultValue("name")
-                .HasColumnType("nchar");
+            // Configuration Fluent API 
+            modelBuilder.ApplyConfiguration(new PassangersConfiguration());
+            modelBuilder.ApplyConfiguration(new FlightConfiguration());
+          
         }
 
     }

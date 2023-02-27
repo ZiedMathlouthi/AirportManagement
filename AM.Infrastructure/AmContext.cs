@@ -22,5 +22,19 @@ namespace AM.Infrastructure
             optionsBuilder.UseSqlServer(@"Data Source=(localdb)\mssqllocaldb;Initial Catalog=AirportManagementDB;Integrated Security=true");
             base.OnConfiguring(optionsBuilder);
         }
+
+
+        // Config clé primaire   sinn bel Annotations 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Flight>().HasKey(f => f.FlightId);
+            // changement de nom de table au niveau de DB
+            modelBuilder.Entity<Flight>().ToTable("Vols");
+            modelBuilder.Entity<Passenger>().Property(p => p.FirstName).IsRequired()
+                .HasMaxLength(80)
+                .HasDefaultValue("name")
+                .HasColumnType("nchar");
+        }
+
     }
 }

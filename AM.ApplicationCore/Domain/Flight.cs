@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace AM.ApplicationCore.Domain
 {
+    //[table("Vols")]   annotations 
     public class Flight
     {
         public int FlightId { get; set; }

@@ -31,6 +31,7 @@ namespace AM.Infrastructure
             // Configuration Fluent API 
             modelBuilder.ApplyConfiguration(new PassangersConfiguration());
             modelBuilder.ApplyConfiguration(new FlightConfiguration());
+            modelBuilder.ApplyConfiguration(new PlaneConfiguration());
           
         }
 

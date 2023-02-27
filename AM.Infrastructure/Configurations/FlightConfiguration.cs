@@ -18,6 +18,20 @@ namespace AM.Infrastructure.Configurations
             builder.HasKey(f => f.FlightId);
             // changement de nom de table au niveau de DB
             builder.ToTable("Vols");
+
+            //configuration OneToMany 1..*
+            builder.HasOne(f => f.Plane)
+                   .WithMany(p => p.Flights)
+                   .HasForeignKey(f => f.PlaneFk)
+                   .OnDelete(DeleteBehavior.SetNull);
+
+
+            //configuration *..*
+
+            builder.HasMany(f => f.Passengers)
+                   .WithMany(p => p.Flights)
+                   .UsingEntity(pf => pf.ToTable("MyReservations"));
+
         }
     }
 }

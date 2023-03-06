@@ -32,9 +32,14 @@ namespace AM.Infrastructure
             modelBuilder.ApplyConfiguration(new PassangersConfiguration());
             modelBuilder.ApplyConfiguration(new FlightConfiguration());
             modelBuilder.ApplyConfiguration(new PlaneConfiguration());
+            modelBuilder.ApplyConfiguration(new TicketConfiguration());
             modelBuilder.Entity<Passenger>().ToTable("Passengers");
             modelBuilder.Entity<Staff>().ToTable("Staffs");
             modelBuilder.Entity<Traveller>().ToTable("Travellers");
+            
+
+            //modelBuilder.Entity<Ticket>()
+            //    .HasKey(p => new { p.FlightFk, p.PassengerFk });
 
 
 

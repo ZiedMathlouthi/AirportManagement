@@ -42,7 +42,7 @@ namespace AM.Infrastructure
         }
 
 
-        // change all properties to 100 chars max
+        // change all properties to 100 chars max :condition
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
         {
             configurationBuilder.Properties<string>().HaveMaxLength(100).HaveColumnType("varchar");

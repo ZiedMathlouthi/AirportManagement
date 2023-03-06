@@ -20,7 +20,7 @@ namespace AM.ApplicationCore.Domain
 
         [Display(Name ="Date of Birth"), DataType(DataType.Date)]
         public DateTime BirthDate { get; set; }
-      //  [RegularExpression("[0-9]{,8}")]   virgule avant 8 yaani tanjem tekhou 0 walla 1 .... w kif yabda virgule baaed l 8,
+      //  [RegularExpression("[0-9]{,8}")]   virgule avant 8 yaani tanjem tekhou 0 walla 1 ..... w kif yabda virgule baaed l 8,
       // yaani tnajem tekhou au minimum 8 
         [RegularExpression("[0-9]{8}")]
         public int? TelNumber { get; set; }
@@ -28,6 +28,8 @@ namespace AM.ApplicationCore.Domain
         public string? EmailAddress { get; set; }
 
         public  List<Flight> Flights { get; set; }
+
+        // methode ToString :
 
         //public override string ToString()
         //{

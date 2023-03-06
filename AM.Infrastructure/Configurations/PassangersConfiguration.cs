@@ -20,7 +20,17 @@ namespace AM.Infrastructure.Configurations
         //        .HasDefaultValue("name")
         //        .HasColumnType("nchar");
 
-            builder.OwnsOne(p => p.FullName);
+            builder.OwnsOne(p => p.FullName , f =>
+            {
+                f.Property(a => a.FirstName).HasColumnName("FirstName")
+                .IsRequired()
+                .HasColumnType("char")
+                .HasMaxLength(30);
+                f.Property(b => b.LastName).HasColumnName("PassLastName")
+                .IsRequired()
+                .HasColumnType("char")
+                .HasMaxLength(30);
+            });
         }
     }
 }

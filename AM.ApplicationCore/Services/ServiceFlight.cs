@@ -113,16 +113,16 @@ namespace AM.ApplicationCore.Services
             return req;
         }
 
-        public IEnumerable<Traveller> SeniorTravellers(Flight f)
-        {
+        //public IEnumerable<Traveller> SeniorTravellers(Flight f)
+        //{
 
-            var query = f.Passengers.OfType<Traveller>()
-                                .OrderBy(p => p.BirthDate).Take(3);
+        //    //var query = f.Passengers.OfType<Traveller>()
+        //    //                    .OrderBy(p => p.BirthDate).Take(3);
            
 
-            return query;
+        //    //return query;
 
-        }
+        //}
 
         public IGrouping<string, IEnumerable<Flight>> DestinationGroupedFlights()
         {

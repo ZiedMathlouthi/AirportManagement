@@ -28,9 +28,9 @@ namespace AM.Infrastructure.Configurations
 
             //configuration *..*
 
-            builder.HasMany(f => f.Passengers)
-                   .WithMany(p => p.Flights)
-                   .UsingEntity(pf => pf.ToTable("MyReservations"));
+            //builder.HasMany(f => f.Passengers)
+            //       .WithMany(p => p.Flights)
+            //       .UsingEntity(pf => pf.ToTable("MyReservations"));
 
         }
     }

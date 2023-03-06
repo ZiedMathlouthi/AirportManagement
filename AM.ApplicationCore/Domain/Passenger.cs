@@ -27,7 +27,7 @@ namespace AM.ApplicationCore.Domain
         [EmailAddress]
         public string? EmailAddress { get; set; }
 
-        public  List<Flight> Flights { get; set; }
+        public  List<Ticket>? Ticket { get; set; }
 
         // methode ToString :
 

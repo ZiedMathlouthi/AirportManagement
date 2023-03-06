@@ -32,6 +32,12 @@ namespace AM.Infrastructure
             modelBuilder.ApplyConfiguration(new PassangersConfiguration());
             modelBuilder.ApplyConfiguration(new FlightConfiguration());
             modelBuilder.ApplyConfiguration(new PlaneConfiguration());
+            modelBuilder.Entity<Passenger>().ToTable("Passengers");
+            modelBuilder.Entity<Staff>().ToTable("Staffs");
+            modelBuilder.Entity<Traveller>().ToTable("Travellers");
+
+
+
           
         }
 
@@ -44,6 +50,11 @@ namespace AM.Infrastructure
             configurationBuilder.Properties<double>().HavePrecision(3, 2);
 
         }
+
+
+
+
+
 
     }
 }

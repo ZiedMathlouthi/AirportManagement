@@ -31,6 +31,11 @@ namespace AM.Infrastructure.Configurations
                 .HasColumnType("char")
                 .HasMaxLength(30);
             });
+
+            //builder.HasDiscriminator<int>("IsTraveller")
+            //    .HasValue<Passenger>(1)
+            //    .HasValue<Staff>(2)
+            //    .HasValue(0);
         }
     }
 }

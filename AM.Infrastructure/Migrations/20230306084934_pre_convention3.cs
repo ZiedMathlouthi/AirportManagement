@@ -5,7 +5,7 @@
 namespace AM.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class FluentAPI2 : Migration
+    public partial class pre_convention3 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

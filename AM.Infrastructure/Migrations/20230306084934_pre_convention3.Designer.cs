@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AM.Infrastructure.Migrations
 {
     [DbContext(typeof(AmContext))]
-    [Migration("20230227110810_FluentAPI8")]
-    partial class FluentAPI8
+    [Migration("20230306084934_pre_convention3")]
+    partial class pre_convention3
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,20 +35,22 @@ namespace AM.Infrastructure.Migrations
 
                     b.Property<string>("Departure")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar");
 
                     b.Property<string>("Destination")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar");
 
                     b.Property<DateTime>("EffectiveArrival")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<int>("EstimatedDuration")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("FlightDate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<int?>("PlaneFk")
                         .HasColumnType("int");
@@ -63,14 +65,15 @@ namespace AM.Infrastructure.Migrations
             modelBuilder.Entity("AM.ApplicationCore.Domain.Passenger", b =>
                 {
                     b.Property<string>("PassportNumber")
-                        .HasMaxLength(7)
-                        .HasColumnType("nvarchar(7)");
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar");
 
                     b.Property<DateTime>("BirthDate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<string>("EmailAddress")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -81,7 +84,8 @@ namespace AM.Infrastructure.Migrations
 
                     b.Property<string>("LastName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar");
 
                     b.Property<int>("PassengerId")
                         .HasColumnType("int");
@@ -107,7 +111,7 @@ namespace AM.Infrastructure.Migrations
                         .HasColumnName("PlaneCapacity");
 
                     b.Property<DateTime>("ManufactureDate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<int>("PlaneType")
                         .HasColumnType("int");
@@ -123,7 +127,8 @@ namespace AM.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("PassengersPassportNumber")
-                        .HasColumnType("nvarchar(7)");
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar");
 
                     b.HasKey("FlightsFlightId", "PassengersPassportNumber");
 

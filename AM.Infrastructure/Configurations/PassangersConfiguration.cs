@@ -14,11 +14,13 @@ namespace AM.Infrastructure.Configurations
     {
         public void Configure(EntityTypeBuilder<Passenger> builder)
         {
-            builder.Property(p => p.FirstName)
-                .IsRequired()
-                .HasMaxLength(80)
-                .HasDefaultValue("name")
-                .HasColumnType("nchar");
+        //    builder.Property(p => p.FirstName)
+        //        .IsRequired()
+        //        .HasMaxLength(80)
+        //        .HasDefaultValue("name")
+        //        .HasColumnType("nchar");
+
+            builder.OwnsOne(p => p.FullName);
         }
     }
 }

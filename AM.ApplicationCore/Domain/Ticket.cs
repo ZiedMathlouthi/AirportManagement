@@ -10,9 +10,9 @@ namespace AM.ApplicationCore.Domain
 {
     public class Ticket
     {
-        [ForeignKey("Passenger")]
+      //  [ForeignKey("Passenger")]
         public string PassengerFk { get; set; } // prop clé etrangere
-        [ForeignKey("Flight")]
+       // [ForeignKey("Flight")]
         public int FlightFk { get; set; }  // prop clé etrangere
 
         public double Prix { get; set; }

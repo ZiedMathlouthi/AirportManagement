@@ -113,13 +113,7 @@ namespace AM.Infrastructure.Migrations
                     b.Property<int>("FlightFk")
                         .HasColumnType("int");
 
-                    b.Property<int>("PassengerFk")
-                        .HasColumnType("int");
-
-                    b.Property<int>("FlightId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("PassengerPassportNumber")
+                    b.Property<string>("PassengerFk")
                         .HasMaxLength(100)
                         .HasColumnType("varchar");
 
@@ -137,9 +131,7 @@ namespace AM.Infrastructure.Migrations
 
                     b.HasKey("FlightFk", "PassengerFk");
 
-                    b.HasIndex("FlightId");
-
-                    b.HasIndex("PassengerPassportNumber");
+                    b.HasIndex("PassengerFk");
 
                     b.ToTable("Ticket");
                 });
@@ -225,13 +217,15 @@ namespace AM.Infrastructure.Migrations
                 {
                     b.HasOne("AM.ApplicationCore.Domain.Flight", "Flight")
                         .WithMany("Tickets")
-                        .HasForeignKey("FlightId")
+                        .HasForeignKey("FlightFk")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("AM.ApplicationCore.Domain.Passenger", "Passenger")
                         .WithMany("Ticket")
-                        .HasForeignKey("PassengerPassportNumber");
+                        .HasForeignKey("PassengerFk")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Flight");
 

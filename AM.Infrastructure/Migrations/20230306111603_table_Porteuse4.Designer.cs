@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AM.Infrastructure.Migrations
 {
     [DbContext(typeof(AmContext))]
-    [Migration("20230306110715_table_Porteuse")]
-    partial class table_Porteuse
+    [Migration("20230306111603_table_Porteuse4")]
+    partial class table_Porteuse4
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -116,13 +116,7 @@ namespace AM.Infrastructure.Migrations
                     b.Property<int>("FlightFk")
                         .HasColumnType("int");
 
-                    b.Property<int>("PassengerFk")
-                        .HasColumnType("int");
-
-                    b.Property<int>("FlightId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("PassengerPassportNumber")
+                    b.Property<string>("PassengerFk")
                         .HasMaxLength(100)
                         .HasColumnType("varchar");
 
@@ -140,9 +134,7 @@ namespace AM.Infrastructure.Migrations
 
                     b.HasKey("FlightFk", "PassengerFk");
 
-                    b.HasIndex("FlightId");
-
-                    b.HasIndex("PassengerPassportNumber");
+                    b.HasIndex("PassengerFk");
 
                     b.ToTable("Ticket");
                 });
@@ -228,13 +220,15 @@ namespace AM.Infrastructure.Migrations
                 {
                     b.HasOne("AM.ApplicationCore.Domain.Flight", "Flight")
                         .WithMany("Tickets")
-                        .HasForeignKey("FlightId")
+                        .HasForeignKey("FlightFk")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("AM.ApplicationCore.Domain.Passenger", "Passenger")
                         .WithMany("Ticket")
-                        .HasForeignKey("PassengerPassportNumber");
+                        .HasForeignKey("PassengerFk")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Flight");
 

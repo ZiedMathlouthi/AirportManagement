@@ -18,7 +18,7 @@ namespace AM.ApplicationCore.Domain
         public string Destination { get; set; }
         public virtual List<Ticket>? Tickets { get; set; }
        // [ForeignKey("PlaneId")]
-        public Plane? Plane { get; set; }// prop navigation      => nakhtaar wahda fehom 
+        public virtual Plane? Plane { get; set; }// prop navigation      => nakhtaar wahda fehom 
         [ForeignKey("Plane")]
         public int? PlaneFk { get; set; } // prop clé etrangère  => nakhtar wahda fehom
         public override string ToString()

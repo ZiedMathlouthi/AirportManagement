@@ -27,7 +27,7 @@ namespace AM.ApplicationCore.Domain
         [EmailAddress]
         public string? EmailAddress { get; set; }
 
-        public  List<Ticket>? Tickets { get; set; }
+        public virtual  List<Ticket>? Tickets { get; set; }
 
         // methode ToString :
 

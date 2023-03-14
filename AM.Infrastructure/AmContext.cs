@@ -16,6 +16,9 @@ namespace AM.Infrastructure
        // public DbSet<Staff> Staffs { get; set; }
         public DbSet<Flight> Flights { get; set; }
         public DbSet<Plane> Planes { get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
+        public DbSet<Seat> Seats { get; set; }
+        public DbSet<Section> Sections { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -34,6 +37,8 @@ namespace AM.Infrastructure
             modelBuilder.ApplyConfiguration(new FlightConfiguration());
             modelBuilder.ApplyConfiguration(new PlaneConfiguration());
             modelBuilder.ApplyConfiguration(new TicketConfiguration());
+            modelBuilder.ApplyConfiguration(new ReservationConfiguration());
+            modelBuilder.ApplyConfiguration(new SeatConfiguration());
             modelBuilder.Entity<Passenger>().ToTable("Passengers");
             modelBuilder.Entity<Staff>().ToTable("Staffs");
             modelBuilder.Entity<Traveller>().ToTable("Travellers");

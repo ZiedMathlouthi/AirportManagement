@@ -36,6 +36,13 @@ namespace AM.Infrastructure.Configurations
             //    .HasValue<Passenger>(1)
             //    .HasValue<Staff>(2)
             //    .HasValue(0);
+
+
+            //configuration *..*
+
+            //builder.HasMany(f => f.Passengers)
+            //       .WithMany(p => p.Seats)
+            //       .UsingEntity(pf => pf.ToTable("MyReservations"));
         }
     }
 }

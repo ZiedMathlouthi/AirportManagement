@@ -34,6 +34,8 @@ namespace AM.ApplicationCore.Domain
 
         public virtual List<Flight> Flights { get; set; }
 
+        public virtual List<Seat> Seats { get; set; }
+
 
         public override string ToString()
         {
